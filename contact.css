@@ -1,0 +1,375 @@
+/* =====================================
+   GLOBAL STYLES
+===================================== */
+:root {
+  --primary: #c31432;
+  --secondary: #240b36;
+  --accent: #00b09b;
+  --highlight: #ff0066;
+  --text-dark: #1e293b;
+  --bg-light: #f8fafc;
+  --footer-bg: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =====================================
+   NOTIFICATION BAR
+===================================== */
+.notification-bar {
+  width: 100%;
+  height: min-content;
+  min-height: 40px;
+  background: linear-gradient(to right, #f43f5e, #881337);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.notification-track {
+  white-space: nowrap;
+  animation: scroll-left 25s linear infinite;
+  display: flex;
+}
+
+.notification-track span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding-left: 50vw;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+.main-content {
+  flex-grow: 1;
+  padding-bottom: 3rem;
+  width: 100%;
+}
+
+.hero-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.hero-section p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* =====================================
+   CONTACT GRID
+===================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: -2rem auto 3rem;
+}
+
+.contact-card {
+  background: white;
+  padding: 2.5rem 1.5rem;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  background: #f1f5f9;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+}
+
+.contact-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #0f172a;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #334155;
+  word-break: break-all;
+}
+
+/* =====================================
+   SOCIAL SECTION
+===================================== */
+.social-section {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: white;
+  border-radius: 40px;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.social-section h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-card {
+  text-decoration: none;
+  background: #f8fafc;
+  padding: 2.5rem 1rem;
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.social-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-card img {
+  width: 36px;
+  height: 36px;
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.social-card span {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-10px);
+  background: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+}
+
+.social-card:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Individual Brand Coloring */
+.social-card.facebook:hover span {
+  color: #1877f2;
+}
+
+.social-card.instagram:hover span {
+  color: #e4405f;
+}
+
+.social-card.twitter:hover span {
+  color: #1da1f2;
+}
+
+.social-card.linkedin:hover span {
+  color: #0077b5;
+}
+
+.social-card.youtube:hover span {
+  color: #ff0000;
+}
+
+.social-card.facebook:hover img {
+  filter: brightness(0) saturate(100%) invert(34%) sepia(85%) saturate(1915%) hue-rotate(204deg) brightness(101%) contrast(92%);
+}
+
+.social-card.instagram:hover img {
+  filter: brightness(0) saturate(100%) invert(31%) sepia(85%) saturate(3015%) hue-rotate(325deg) brightness(95%) contrast(92%);
+}
+
+.social-card.twitter:hover img {
+  filter: brightness(0) saturate(100%) invert(56%) sepia(93%) saturate(1415%) hue-rotate(175deg) brightness(101%) contrast(92%);
+}
+
+.social-card.linkedin:hover img {
+  filter: brightness(0) saturate(100%) invert(34%) sepia(65%) saturate(3015%) hue-rotate(175deg) brightness(95%) contrast(92%);
+}
+
+.social-card.youtube:hover img {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(6015%) hue-rotate(350deg) brightness(95%) contrast(110%);
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+footer {
+  background: linear-gradient(to right, var(--footer-bg), #062a5f);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #fff;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  margin-top: auto;
+}
+
+footer .social-links h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-buttons a img {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%);
+}
+
+/* Social media colors */
+.footer-buttons .facebook {
+  background: #1877f2;
+}
+
+.footer-buttons .instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.footer-buttons .twitter {
+  background: #1da1f2;
+}
+
+.footer-buttons .linkedin {
+  background: #0077b5;
+}
+
+.footer-buttons .youtube {
+  background: #ff0000;
+}
+
+.footer-buttons a:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+footer .copyright {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-grid {
+    margin-top: 0;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1rem;
+  }
+
+  .social-section {
+    margin: 0 0.5rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .social-card {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+}

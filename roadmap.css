@@ -1,0 +1,250 @@
+/* =====================================
+   GLOBAL STYLES
+===================================== */
+:root {
+  --primary: #c31432;
+  --secondary: #240b36;
+  --accent: #00b09b;
+  --highlight: #ff0066;
+  --text-dark: #1e293b;
+  --bg-light: #f8fafc;
+  --footer-bg: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =====================================
+   HEADER SECTION
+===================================== */
+.heading1 {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  text-align: center;
+  color: white;
+}
+
+.heading1 h1 {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+/* =====================================
+   ROADMAP CONTAINER
+===================================== */
+.roadmap {
+  max-width: 900px;
+  margin: -3rem auto 5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 2;
+}
+
+/* =====================================
+   LEVEL CARD
+===================================== */
+.level {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.level::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  opacity: 0.3;
+  transition: 0.3s;
+}
+
+.level:hover {
+  transform: translateX(10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.level:hover::before {
+  opacity: 1;
+}
+
+.level.active {
+  background: #ffffff;
+  border-color: var(--accent);
+}
+
+.level.active::before {
+  background: var(--accent);
+  opacity: 1;
+}
+
+.level strong {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  color: #0f172a;
+  font-weight: 700;
+  margin-bottom: 0;
+  transition: color 0.3s;
+}
+
+.level.active strong {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* =====================================
+   DETAILS / ACCORDION
+===================================== */
+.details {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #475569;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  opacity: 0;
+}
+
+.level.active .details {
+  max-height: 1000px;
+  padding: 0.5rem 0 1rem;
+  opacity: 1;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+footer {
+  background: linear-gradient(to right, var(--footer-bg), #062a5f);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #fff;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  margin-top: auto;
+}
+
+footer .social-links h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-buttons a img {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%);
+}
+
+/* Social media colors */
+.footer-buttons .facebook {
+  background: #1877f2;
+}
+
+.footer-buttons .instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.footer-buttons .twitter {
+  background: #1da1f2;
+}
+
+.footer-buttons .linkedin {
+  background: #0077b5;
+}
+
+.footer-buttons .youtube {
+  background: #ff0000;
+}
+
+.footer-buttons a:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+footer .copyright {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (max-width: 768px) {
+  .heading1 {
+    padding: 4rem 1rem;
+  }
+
+  .roadmap {
+    margin-top: -2rem;
+    padding: 0 1rem;
+  }
+
+  .level {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .level:hover {
+    transform: none;
+  }
+}

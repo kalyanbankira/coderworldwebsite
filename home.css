@@ -1,0 +1,272 @@
+/* =====================================
+   GLOBAL STYLES
+===================================== */
+:root {
+  --primary: #c31432;
+  --secondary: #240b36;
+  --accent: #00b09b;
+  --highlight: #ff0066;
+  --text-dark: #222;
+  --bg-light: #f8f9fa;
+  --footer-bg: #041730;
+  --nav-bg: #05695e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  text-align: center;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+
+
+/* =====================================
+   NOTIFICATION BAR
+===================================== */
+.notification-bar {
+  width: 100%;
+  height: 45px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.notification-track {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scroll-left 20s linear infinite;
+}
+
+.notification-track span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding-left: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* =====================================
+   HERO SECTION
+===================================== */
+.hero-section {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* =====================================
+   PROFILE GRID
+===================================== */
+.prof {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  height: 350px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profile-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  text-align: left;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover .profile-info {
+  transform: translateY(0);
+}
+
+.profile-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.profile-info p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Background Images for Cards */
+#pro1 {
+  background-image: url('hacker1.jpg');
+}
+
+#pro2 {
+  background-image: url('hacker2.jpg');
+}
+
+#pro3 {
+  background-image: url('hacker3.jpg');
+}
+
+#pro4 {
+  background-image: url('hacker4.jpg');
+}
+
+#pro5 {
+  background-image: url('hacker5.jpg');
+}
+
+#pro6 {
+  background-image: url('hacker6.jpg');
+}
+
+#pro7 {
+  background-image: url('hacker7.jpg');
+}
+
+#pro8 {
+  background-image: url('hacker8.jpg');
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+footer {
+  background: linear-gradient(to right, var(--footer-bg), #062a5f);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #fff;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  margin-top: auto;
+}
+
+footer .social-links h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-buttons a img {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%);
+}
+
+/* Social media colors */
+.footer-buttons .facebook {
+  background: #1877f2;
+}
+
+.footer-buttons .instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.footer-buttons .twitter {
+  background: #1da1f2;
+}
+
+.footer-buttons .linkedin {
+  background: #0077b5;
+}
+
+.footer-buttons .youtube {
+  background: #ff0000;
+}
+
+.footer-buttons a:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+footer .copyright {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
